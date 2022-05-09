@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>R2年度再商品化委託料概算計算</title>
+
+<script type="text/javascript">
+
+function keisan(){
+
+	var price1 = document.form1.goods1.options[document.form1.goods1.selectedIndex].value;
+	var price2 = document.form1.goods2.options[document.form1.goods2.selectedIndex].value;
+	var price3 = document.form1.goods3.options[document.form1.goods3.selectedIndex].value;
+
+	// 合計を計算
+	var total1 = Number(price1) * Number(price2) * Number(price3)/1000;
+
+	// 設定終了
+	document.form1.field_total1.value = total1; // 合計を表示
+
+    var wth = document.form1.weight.value;
+    var lean =  Number(wth) *Number(price1) * Number(price2) * Number(price3)/1000;
+
+    document.form1.lean.value = lean;
+
+    var tol12 = document.form1.year.value;
+    var fin =  Number(tol12) *Number(wth) *Number(price1) * Number(price2) * Number(price3)/1000;
+
+    document.form1.fin.value = fin;
+
+
+    var price4 = document.form1.goods4.options[document.form1.goods4.selectedIndex].value;
+    var price5 = document.form1.goods5.options[document.form1.goods5.selectedIndex].value;
+    var price6 = document.form1.goods6.options[document.form1.goods6.selectedIndex].value;
+    var total2 = Number(price4) * Number(price5) * Number(price6)/1000;
+    document.form1.field_total2.value = total2;
+
+    var wth2 = document.form1.weight2.value;
+    var lean2 =  Number(wth2) *Number(price4) * Number(price5) * Number(price6)/1000;
+    document.form1.lean2.value = lean2;
+
+    var tol122 = document.form1.year2.value;
+    var fin2 =  Number(tol122) *Number(wth2) *Number(price4) * Number(price5) * Number(price6)/1000;
+    document.form1.fin2.value = fin2;
+}
+
+
+ 
+</script> 
+
+</head>
+<body>
+
+<table>
+<th>R2年度再商品化委託料概算計算</th>
+<tr><td>概算のため取り扱い注意</td></tr>
+<tr><td>　</td></tr>
+</table>
+
+<form action="#" name="form1">
+
+<table>
+<tr><td>・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・</td></tr>
+<tr><td>・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・</td></tr>
+<th>紙製容器簡易再商品化委託料計算</th>
+<tr>
+<th>項目</th>
+<th>入力・選択</th>
+</tr>
+<tr>
+<td>紙製容器簡易算定基準</td>
+<td><select name="goods1" onChange="keisan()">
+<option value="0">区分を選択してください</option>
+<option value="0.04197">食料品:区分10(0.04197)</option>
+<option value="0.04143">清涼飲料等:区分20(0.04143)</option>
+<option value="0.03914">酒類:区分30(0.03914)</option>
+<option value="0.04194">油脂･石鹸塗料等:区分40(0.04194)</option>
+<option value="0.02632">医薬品:区分50(0.02632)</option>
+<option value="0.04542">化粧品･歯磨等:区分60(0.04542)</option>
+<option value="0.03828">小売:区分70(0.03828)</option>
+<option value="0.03598">その他:区分90(0.03598)</option>
+<option value="0.0236">包装:区分99(0.0236)</option>
+</select></td>
+</tr>
+<tr>
+<td>単位</td>
+<td><select name="goods2" onChange="keisan()">
+<option value="0">タイプを選択してください</option>
+<option value="1">1個</option>
+<option value="1">1m</option>
+</select></td>
+</tr>
+<tr>
+<td>固定実施単価</td>
+<td><select name="goods3" onChange="keisan()">
+<option value="0">実施単価を選択してください</option>
+<option value="13">13円/kg</option>
+</select></td>
+</tr>    
+<tr>
+<td alig="right"><strong>単価/g</strong></td>
+<td><output type="text" name="field_total1" size="8" value="0"></td>
+<td>円</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>製品1個(1m)あたりの重量(g)</td>
+<td><input type="id" class="box" name="weight" onChange="keisan()"></td>
+</tr>    
+<tr>
+<td alig="right"><strong>製品1個(1m)あたりの実施委託料金額</strong></td>
+<td><output type="text" name="lean" size="8" value="0"></td>
+<td>円</td>
+</tr>
+<tr>
+<td>年間使用合計数量</td>
+<td><input type="id" class="box" name="year" onChange="keisan()"></td>
+</tr>    
+<tr>
+<td alig="right"><strong>1年あたりの実施委託料金額</strong></td>
+<td><output type="text" name="fin" size="8" value="0"></td>
+<td>円</td>
+</tr>
+<tr><td>・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・</td></tr>
+<tr><td>・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・</td></tr>
+<th>プラ容器簡易再商品化委託料計算</th>
+<tr>
+<th>項目</th>
+<th>入力・選択</th>
+</tr>
+<tr>
+<td>プラスチック容器簡易算定基準</td>
+<td><select name="goods4" onChange="keisan()">
+<option value="0">区分を選択してください</option>
+<option value="0.52674">食料品:区分10(0.52674)</option>
+<option value="0.53035">清涼飲料等:区分20(0.53035)</option>
+<option value="0.49186">酒類:区分30(0.49186)</option>
+<option value="0.53514">油脂･石鹸塗料等:区分40(0.53514)</option>
+<option value="0.19144">医薬品:区分50(0.19144)</option>
+<option value="0.55477">化粧品･歯磨等:区分60(0.55477)</option>
+<option value="0.51655">小売:区分70(0.51655)</option>
+<option value="0.32348">その他:区分90(0.32348)</option>
+<option value="0.31901">包装:区分99(0.31901)</option>
+</select></td>
+</tr>
+<tr>
+<td>単位</td>
+<td><select name="goods5" onChange="keisan()">
+<option value="0">タイプを選択してください</option>
+<option value="1">1個</option>
+<option value="1">1m</option>
+</select></td>
+</tr>
+<tr>
+<td>固定実施単価</td>
+<td><select name="goods6" onChange="keisan()">
+<option value="0">実施単価を選択してください</option>
+<option value="49">49円/kg</option>
+</select></td>
+</tr>    
+<tr>
+<td alig="right"><strong>単価/g</strong></td>
+<td><output type="text" name="field_total2" size="8" value="0"></td>
+<td>円</td>
+</tr>
+<tr>
+<td>製品1個(1m)あたりの重量(g)</td>
+<td><input type="id" class="box" name="weight2" onChange="keisan()"></td>
+</tr>    
+<tr>
+<td alig="right"><strong>製品1個(1m)あたりの実施委託料金額：</strong></td>
+<td><output type="text" name="lean2" size="8" value="0"></td>
+<td>円</td>
+</tr>
+<tr>
+<td>年間使用合計数量</td>
+<td><input type="id" class="box" name="year2" onChange="keisan()"></td>
+</tr>    
+<tr>
+<td alig="right"><strong>1年あたりの実施委託料金額：</strong></td>
+<td><output type="text" name="fin2" size="8" value="0"></td>
+ <td>円</td>
+</tr>
+</table>
+
+</form>
+
+</body>
+</html>
